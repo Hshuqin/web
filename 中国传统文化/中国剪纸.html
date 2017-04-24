@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>中国剪纸</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_lnia40i6tsdobt9.css">
+</head>
+<style>
+/*top nav*/
+	#top{width:100%;height:117px;border-bottom: 2px solid black;}
+	#top img{height:137px;width:100%;position:absolute;top:-24px;}
+	#nav{min-width:1226px;width:100%;margin:0 auto;color:black;padding: 10px 0;background:#eee;height:80px;}
+	#nav .iconfont{font-size: 15px;}
+/*banner*/
+	#carouselcontainter{width:1000px;height:400px;margin:20px auto;border: 10px solid black;box-shadow: 20px 40px 40px black;}
+	#carouselcontainter .carousel-inner{width:980px;height:380px;}
+	#carouselcontainter .carousel-inner img{width:980px;height:380px;}
+
+	#panelContainer{width:1120px;height:350px;margin: 0 auto;padding-top: 20px;}
+	#panelContainer h4{color:#111;text-align: center;}
+	#panelContainer .panel-body{color:#444;text-indent: 4px;}
+/*xuanfukuang*/
+	#hider{width:30px;height:70px;position:absolute;top:380px;left:0px;line-height: 30px;font-size: 20px;overflow: hidden;z-index: 2;border-radius:2px; }
+	#hider img{position: absolute;top:0px;left:0px;width:30px;height:70px;opacity: 0.8;filter: alpha(opacity:80);z-index: 1;}
+	#hider .iconfont{font-size: 20px;position: absolute;top:0px;left:0px;z-index: 3;}
+	#fenxiao{width:120px;height:30px;position:absolute;top:400px;left:-120px;overflow: hidden;z-index: -1;border-radius:2px;}
+	#fenxiao p{text-align: center;color:#111;}
+	#fenxiao span{color:#333;}
+</style>
+<script src="js/move.js"></script>
+<script>
+	window.onload=function(){
+		var oDivHider=document.getElementById('hider');
+			var oDivfx=document.getElementById('fenxiao');
+			oDivHider.onmouseover=function(){
+				startMove(oDivfx,'left',30,function(){
+					startMove(oDivfx,'height',200);
+				});
+			};
+			oDivHider.onmouseout=function(){
+				startMove(oDivfx,'height',30,function(){
+					startMove(oDivfx,'left',-120);
+				});
+			};
+	};
+</script>
+<body>
+	<div id="top"><img src="img/zhuye/top.jpg" alt=""></div>
+<div id="nav">
+	<div class="container">
+		 <div class="nav navbar">
+			<ul class="nav navbar-nav nav-pills">
+				<li><a href="中国传统文化.html"><span class="iconfont">&#xe88d;</span>首页</a></li>
+				<li>
+					<a href="中国风筝.html">中国风筝<!-- <span class="caret"></span> --></a>	
+				</li>
+				<li>
+					<a href="中国古家具.html">中国古家具</a>
+				</li>
+				<li class="dropdown">
+					<a href="#" class="dropdown-toggle" data-toggle="dropdown">中国剪纸<!-- <span class="caret"> --></span></a>
+				</li>
+				<li>
+					<a href="中国皮影.html">中国皮影<!-- <span class="caret"></span> --></a>
+				</li>
+				<li class="disabled"><a href="#">茶文化</a></li>
+				<li class="disabled"><a href="#">丝绸文化</a></li>
+				<li class="disabled"><a href="#">酒文化</a></li>
+			</ul>
+			<ul class="nav navbar-nav pull-right">
+				<li><a href=""><span class="iconfont">&#xe8c9;</span>登录</a></li>
+				<li><a href=""><span class="iconfont">&#xe8c8;</span>注册</a></li>
+				<li><a href=""><span class="iconfont">&#xe8ab;</span>客服</a></li>
+				<li><a href=""><span class="iconfont">&#xe646;</span>关于</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="carouselcontainter" class="carousel" data-ride="carousel" data-interval="4000">
+	<ol class="carousel-indicators">
+		<li class="active" data-target="#carouselcontainter" data-slide-to="0"></li>
+		<li data-target="#carouselcontainter" data-slide-to="1"></li>
+		<li data-target="#carouselcontainter" data-slide-to="2"></li>
+		<li data-target="#carouselcontainter" data-slide-to="3"></li>
+	</ol>
+	<div class="carousel-inner">
+		<div class="item active" >
+			<a href="#"><img src="img/j/1.jpg" alt=""></a>
+		</div>
+		<div class="item">
+			<a href="#"><img src="img/j/2.jpg" alt=""></a>
+		</div>
+		<div class="item">
+			<a href="#"><img src="img/j/3.jpg" alt=""></a>
+		</div>
+		<div class="item">
+			<a href="#"><img src="img/j/4.jpg" alt=""></a>
+		</div>
+	</div>
+</div>
+<div class="panel-group" id="panelContainer">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse" data-parent="#panelContainer">简介：</a></h4>
+		</div>
+		<div class="panel-collapse in" id="collapse1">
+			<div class="panel-body"><span>剪纸是一种民间传统工艺品。早在汉、唐时代，民间妇女即有使用金银箔和彩帛剪成方胜、花鸟贴上鬓角为饰的风尚。后来逐步发展，在节日中，用色纸剪成各种花草、动物或人物故事，贴在窗户上（叫“窗花”）、门楣上（叫“门签”）作为装饰，也有作为礼品装饰或刺绣花样之用的。剪纸的工具，一般只用一把小剪刀，有的职业艺人则用一种特制的刻刀刻制，称为“刻纸”。</span></div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h4 class="panel-title"><a href="#collapse2" data-toggle="collapse" data-parent="#panelContainer">各地剪纸一览：</a></h4>
+		</div>
+		<div class="panel-collapse" id="collapse2">
+			<div class="panel-body"><span>山东民间剪纸 河北民间剪纸 北京民间剪纸 黑龙江民间剪纸 吉林民间剪纸 山西民间剪纸 安徽民间剪纸 湖南民间剪纸 湖北民间剪纸 江苏民间剪纸 浙江民间剪纸 扬州民间剪纸 福建民间剪纸 云南民间剪纸 贵州民间剪纸 邳县剪纸 佛山剪纸 台江剪纸 安塞剪纸 陇东剪纸 浮山剪纸 高密剪纸 宾州剪纸 蔚县剪纸 南京剪纸</span> </div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h4 class="panel-title"><a href="#collapse3" data-toggle="collapse" data-parent="#panelContainer">中国剪纸形式：</a></h4>
+		</div>
+		<div class="panel-collapse" id="collapse3">
+			<div class="panel-body"><span>窗花 喜花 礼花 鞋花 门笺 滦州布影 斗香花 剪纸团花 剪纸旗幡 剪纸汉字</span></div>
+		</div>
+	</div>
+</div>
+<img src="img/bei.jpg" alt="" style="width:100%;height:800px;position:absolute;z-index: -1;top:195px;margin:0;">
+<div id="hider">
+	<img src="img/more.jpg" alt="">
+</div>
+<div id="fenxiao">
+	<ul style="list-style: none;margin: 0px;padding: 0px;">
+	<li style="margin: 0px;padding:0px;position: relative;width:80px;height:200px;">
+		<img src="img/bei.jpg" style="width:120px;height:200px; position:absolute;top:0px;left:0px;z-index: -1;filter: alpha(opacity:80);">
+		<p><span class="iconfont">&#xe8c9;</span>作者：</p>
+		<span>王嘉莉</span>
+		<p>学院：</p>
+		<span>XXXX</span>
+		<p>学号：</p>
+		<span>XXXXX</span>
+		<p>其他：</p>
+		<span>xxxx</span>
+	</li></ul>
+</div>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/bootstrap.js"></script>
+</body>
+</html>

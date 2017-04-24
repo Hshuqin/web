@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>中国皮影</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_lnia40i6tsdobt9.css">
+</head>
+<style>
+/*top nav*/
+	#top{width:100%;height:117px;border-bottom: 2px solid black;}
+	#top img{height:137px;width:100%;position:absolute;top:-24px;}
+	#nav{min-width:1226px;width:100%;margin:0 auto;color:black;padding: 10px 0;background:#eee;height:80px;}
+	#nav .iconfont{font-size: 15px;}
+/*banner*/
+	#carouselcontainter{width:1000px;height:400px;margin:20px auto;border: 10px solid black;box-shadow: 20px 40px 40px black;}
+	#carouselcontainter .carousel-inner{width:980px;height:380px;}
+	#carouselcontainter .carousel-inner img{width:980px;height:380px;}
+
+
+	#panelContainer{width:1120px;height:400px;margin: 0 auto;padding-top: 20px;}
+	#panelContainer h4{color:#111;text-align: center;}
+	#panelContainer .panel-body{color:#444;text-indent: 4px;}
+
+	#hider{width:30px;height:70px;position:absolute;top:380px;left:0px;line-height: 30px;font-size: 20px;overflow: hidden;z-index: 2;border-radius:2px; }
+	#hider img{position: absolute;top:0px;left:0px;width:30px;height:70px;opacity: 0.8;filter: alpha(opacity:80);z-index: 1;}
+	#hider .iconfont{font-size: 20px;position: absolute;top:0px;left:0px;z-index: 3;}
+	#fenxiao{width:120px;height:30px;position:absolute;top:400px;left:-120px;overflow: hidden;z-index: -1;border-radius:2px;}
+	#fenxiao p{text-align: center;color:#111;}
+	#fenxiao span{color:#333;}
+</style>
+<script src="js/move.js"></script>
+<script>
+	window.onload=function(){
+		var oDivHider=document.getElementById('hider');
+			var oDivfx=document.getElementById('fenxiao');
+			oDivHider.onmouseover=function(){
+				startMove(oDivfx,'left',30,function(){
+					startMove(oDivfx,'height',200);
+				});
+			};
+			oDivHider.onmouseout=function(){
+				startMove(oDivfx,'height',30,function(){
+					startMove(oDivfx,'left',-120);
+				});
+			};
+	};
+</script>
+<body>
+	<div id="top"><img src="img/zhuye/top.jpg" alt=""></div>
+<div id="nav">
+	<div class="container">
+		 <div class="nav navbar">
+			<ul class="nav navbar-nav nav-pills">
+				<li><a href="中国传统文化.html"><span class="iconfont">&#xe88d;</span>首页</a></li>
+				<li>
+					<a href="中国风筝.html">中国风筝<!-- <span class="caret"></span> --></a>	
+				</li>
+				<li>
+					<a href="中国古家具.html">中国古家具</a>
+					<!-- <ul class="dropdown-menu">
+						<li><a href="#">简介</a></li>
+						<li><a href="#">内容</a></li>
+					</ul> -->
+				</li>
+				<li>
+					<a href="中国剪纸.html">中国剪纸</a>
+					<!-- <ul class="dropdown-menu">
+						<li><a href="#">简介</a></li>
+						<li><a href="#">内容</a></li>
+					</ul> -->
+
+				</li>
+				<li class="active">
+					<a href="中国皮影.html"  class="dropdown-taggle" data-toggle="dropdown">中国皮影<!-- <span class="caret"></span> --></a>
+				
+				</li>
+				<li class="disabled"><a href="#">茶文化</a></li>
+				<li class="disabled"><a href="#">丝绸文化</a></li>
+				<li class="disabled"><a href="#">酒文化</a></li>
+			</ul>
+			<ul class="nav navbar-nav pull-right">
+				<li><a href=""><span class="iconfont">&#xe8c9;</span>登录</a></li>
+				<li><a href=""><span class="iconfont">&#xe8c8;</span>注册</a></li>
+				<li><a href=""><span class="iconfont">&#xe8ab;</span>客服</a></li>
+				<li><a href=""><span class="iconfont">&#xe646;</span>关于</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="carouselcontainter" class="carousel" data-ride="carousel" data-interval="4000">
+	<ol class="carousel-indicators">
+		<li class="active" data-target="#carouselcontainter" data-slide-to="0"></li>
+		<li data-target="#carouselcontainter" data-slide-to="1"></li>
+		<li data-target="#carouselcontainter" data-slide-to="2"></li>
+		<li data-target="#carouselcontainter" data-slide-to="3"></li>
+	</ol>
+	<div class="carousel-inner">
+		<div class="item active" >
+			<a href="#"><img src="img/p/1.jpg" alt=""></a>
+		</div>
+		<div class="item">
+			<a href="#"><img src="img/p/2.jpg" alt=""></a>
+		</div>
+		<div class="item">
+			<a href="#"><img src="img/p/3.jpg" alt=""></a>
+		</div>
+		<div class="item">
+			<a href="#"><img src="img/p/4.jpg" alt=""></a>
+		</div>
+	</div>
+</div>
+<div class="panel-group" id="panelContainer">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse" data-parent="#panelContainer">皮影</a></h4>
+		</div>
+		<div class="panel-collapse in" id="collapse1">
+			<div class="panel-body">“皮影”是对皮影戏和皮影戏人物（包括场面道具景物）制品的通用称谓。中国皮影艺术，是我国民间工艺美术与戏曲巧妙结合而成的独特艺术品种，是中华民族艺术殿堂里不可或缺的一颗精巧的明珠。</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h4 class="panel-title"><a href="#collapse2" data-toggle="collapse" data-parent="#panelContainer">皮影</a></h4>
+		</div>
+		<div class="panel-collapse" id="collapse2">
+			<div class="panel-body">皮影戏是让观众通过白色布幕，观看一种平面偶人表演的灯影来达到艺术效果的戏剧形式；而皮影戏中的平面偶人以及场面道具景物，通常是民间艺人用手工，刀雕彩绘而成的皮制品，故称之为皮影。</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h4 class="panel-title"><a href="#collapse3" data-toggle="collapse" data-parent="#panelContainer">皮影</a></h4>
+		</div>
+		<div class="panel-collapse" id="collapse3">
+			<div class="panel-body">皮影戏是我国出现最早的戏曲剧种之一。它的演出装备轻便，唱腔丰富优美，表演精彩动人。千百年耒，深受广大民众的喜爱，所以流传甚广。不仅如此，皮影戏还对国内外文化艺术的发展起过一定的作用。有不少新的地方戏曲剧种，就是从各路皮影戏唱腔中派生出来的。中国皮影戏所用的幕影演出原理，以及皮影戏的表演艺术手段，对近代电影的发明和现代电影美术片的发展也都起过先导作用。</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h4 class="panel-title"><a href="#collapse4" data-toggle="collapse" data-parent="#panelContainer">皮影</a></h4>
+		</div>
+		<div class="panel-collapse" id="collapse4">
+			<div class="panel-body">皮影多见于北方农村以及四川、湖北、湖南等地，在长期流变中皮影戏形成不同的地方流派，如北京皮影、唐山皮影、山东皮影、山西皮影、青海皮影、陈龙皮影、宁夏皮影、陕西皮影等，重点流行的陕西还分西路、东路两大派别，风格各具特色。
+</div>
+		</div>
+	</div>
+</div>
+	<img src="img/bei.jpg" alt="" style="width:100%;height:950px;position:absolute;z-index: -1;top:195px;margin:0;">
+<div id="hider">
+	<img src="img/more.jpg" alt="">
+</div>
+<div id="fenxiao">
+	<ul style="list-style: none;margin: 0px;padding: 0px;">
+	<li style="margin: 0px;padding:0px;position: relative;width:80px;height:200px;">
+		<img src="img/bei.jpg" style="width:120px;height:200px; position:absolute;top:0px;left:0px;z-index: -1;filter: alpha(opacity:80);">
+		<p><span class="iconfont">&#xe8c9;</span>作者：</p>
+		<span>王嘉莉</span>
+		<p>学院：</p>
+		<span>XXXX</span>
+		<p>学号：</p>
+		<span>XXXXX</span>
+		<p>其他：</p>
+		<span>xxxx</span>
+	</li></ul>	
+</div>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

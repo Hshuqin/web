@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>中国传统文化</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_xzu2d0gv694fgvi.css">
+</head>
+<style>
+/*top nav*/
+	#top{width:100%;height:117px;border-bottom: 2px solid black;}
+	#top img{height:137px;width:100%;position:absolute;top:-24px;}
+	#nav{min-width:1226px;width:100%;margin:0 auto;color:black;padding: 10px 0;background:#eee;height:80px;}
+	#nav .iconfont{font-size: 15px;}
+/* //banner */
+	#banner{width:1120px;min-width:1120px;margin: 0 auto;height:400px;margin-top:20px;margin-bottom: 50px;box-shadow: 20px 40px 40px black;}
+	#banner .b_left{width:900px;min-width: 900px;height:400px;float:left;position: relative;}
+	#banner .b_left ul{position: relative;list-style: none;margin:0px;padding:0px;}
+	#banner .b_left ul li{position: absolute;height:400px;width:900px;display: block;top:0px;left:0px;overflow: hidden;border:10px solid black;}
+	#banner .b_left ul li img{width:880px;height:380px;position: absolute;top:0;left:0;}
+	#banner .b_left ul li span{display:block;width:900px;height:30px;line-height: 30px;background-color:rgba(0,0,0,0.5);position:absolute;bottom:0px;}
+	#banner .b_left .prev{width:450px;height:400px;position:absolute;top:0px;left:0px;filter: alpha(opacity:0);opacity:0;z-index:1000;}
+	#banner .b_left .prev .mark_left{width:80px;height:80px;position: absolute;top:147px;left:0px;}
+	#banner .b_left .next{width:450px;height:400px;position:absolute;top:0px;left:450px;filter: alpha(opacity:0);opacity:0;z-index:1000;}
+	#banner .b_left .next .mark_right{width:80px;height:70px;position: absolute;top:147px;right:0px;}
+	#banner .b_left .iconfont:hover{color:#f60;cursor: pointer;}
+	#banner .b_right{width:220px;min-width: 220px;height:400px;float:right;background:gray;position:relative;overflow: hidden;}
+	#banner .b_right ul{position:absolute;list-style: none;margin: 0px;padding: 0px;width:220px;height:400px;top:0px;left:0px;}
+	#banner .b_right ul li{display: block;width:220px;height:200px;padding:10px;background: black;filter: alpha(opacity:60);opacity:0.6;}
+	#banner .b_right ul li img{width:200px;height:180px;}
+/*neirong*/
+	#container{/* background: #f2f2f2; */width:100%;padding-top:20px;position:absolute;}
+	#container .row{background:#fff;margin-bottom: 20px;}
+	#container .row:hover{box-shadow: 20px 40px 40px #aaa;top:-20px;}
+	#container .row h4{color:#111;text-align: center;padding:10px 0;}
+	#container .row p{color:#444;line-height: 2;}
+/*悬浮框*/
+	#hider{width:30px;height:70px;position:absolute;top:-280px;left:0px;line-height: 30px;font-size: 20px;overflow: hidden;z-index: 2;border-radius:2px; }
+	#hider img{position: absolute;top:0px;left:0px;width:30px;height:70px;opacity: 0.8;filter: alpha(opacity:80);z-index: 1;}
+	#hider .iconfont{font-size: 20px;position: absolute;top:0px;left:0px;z-index: 3;}
+	#fenxiao{width:80px;height:30px;position:absolute;top:-250px;left:-80px;overflow: hidden;z-index: -1;border-radius:2px;}
+	#fenxiao p{text-align: center;color:#111;}
+	#fenxiao span{color:#333;}
+</style>
+<script src="js/move.js"></script>
+<script>
+//banner
+		function getByClass(oParent,sClass){
+			var aEle=oParent.getElementsByTagName('*');
+			var aResult=[];
+
+			for(var i=0;i<aEle.length;i++){
+				if(aEle[i].className==sClass){
+					aResult.push(aEle[i]);
+				};
+			};
+			return aResult;
+		};
+		window.onload=function(){
+			var oDiv=document.getElementById('banner');
+			var oBtnPrev=getByClass(oDiv,'prev')[0];
+			var oBtnNext=getByClass(oDiv,'next')[0];
+			var oMarkLeft=getByClass(oDiv,'mark_left')[0];
+			var oMarkRight=getByClass(oDiv,'mark_right')[0];
+		//左右按钮
+			oBtnPrev.onmouseover=oMarkLeft.onmouseover=function(){
+				startMove(oBtnPrev,'opacity',100);
+			};
+			oBtnPrev.onmouseout=oMarkLeft.onmouseout=function(){
+				startMove(oBtnPrev,'opacity',0);
+			};
+			oBtnNext.onmouseover=oMarkRight.onmouseover=function(){
+				startMove(oBtnNext,'opacity',100);
+			};
+			oBtnNext.onmouseout=oMarkRight.onmouseout=function(){
+				startMove(oBtnNext,'opacity',0);
+			};
+		//点小图，大图切换
+			var oDivSmall=getByClass(oDiv,'b_right')[0];
+			var aLiSmall=oDivSmall.getElementsByTagName('li');
+			var oUlSmall=oDivSmall.getElementsByTagName('ul')[0];
+			var oUlBig=getByClass(oDiv,'b_left')[0];
+			var aLiBig=oUlBig.getElementsByTagName('li');
+			var nowZIndex=2;//设置当前层级
+			var now=0;//当前页面；
+			for(var i=0;i<aLiSmall.length;i++){
+
+				aLiSmall[i].index=i;
+
+				aLiSmall[i].onclick=function(){
+					if(this.index==now) return;
+					now=this.index;
+					tab();//封装
+				};
+				aLiSmall[i].onmouseover=function(){
+					startMove(this,'opacity',100);
+				};
+				aLiSmall[i].onmouseout=function(){
+					if(this.index!=now){
+						startMove(this,'opacity',60);
+					}
+				}
+			};
+		//左右按钮点击
+			oBtnPrev.onclick=function(){
+				now--;
+				if(now==-1){
+					now=aLiSmall.length-1;
+				}
+				tab();
+
+			};
+			oBtnNext.onclick=function(){
+				now++;
+				if(now==aLiSmall.length){
+					now=0;
+				}
+				tab();
+			};
+			//定时器
+			var timer=setInterval(oBtnNext.onclick,5000);
+			oDiv.onmouseover=function(){
+				clearInterval(timer);
+			};
+			oDiv.onmouseout=function(){
+				timer=setInterval(oBtnNext.onclick,5000);
+			};
+
+
+			var oDivHider=document.getElementById('hider');
+			var oDivfx=document.getElementById('fenxiao');
+			oDivHider.onmouseover=function(){
+				startMove(oDivfx,'left',30,function(){
+					startMove(oDivfx,'height',200);
+				});
+			};
+			oDivHider.onmouseout=function(){
+				startMove(oDivfx,'height',30,function(){
+					startMove(oDivfx,'left',-80);
+				});
+			};
+
+
+		function tab(){
+			aLiBig[now].style.zIndex=nowZIndex++;
+
+			for(var i=0;i<aLiSmall.length;i++){
+				startMove(aLiSmall[i],'opacity',60);
+			};
+				startMove(aLiSmall[now],'opacity',100);
+					
+				var num=Math.random()*3+1;
+					num=parseInt(num,10);
+					if(num==1){
+						aLiBig[now].style.height=0;
+						startMove(aLiBig[now],'height',400);
+					}
+					else if(num==2){
+						aLiBig[now].style.width=0;
+						startMove(aLiBig[now],'width',900);
+					}
+					else{
+						aLiBig[now].style.opacity=0;
+						startMove(aLiBig[now],'opacity',100);
+					}
+
+				if(now==0){
+					startMove(oUlSmall,'top',0);
+				}
+				else{
+					startMove(oUlSmall,'top',-(now-1)*200);
+				}
+			};
+		};	
+
+</script>
+<body style="width:100%;min-width: 1226px;">
+	<div id="top"><img src="img/zhuye/top.jpg" alt=""></div>
+<div id="nav">
+	<div class="container">
+		 <div class="nav navbar">
+			<ul class="nav navbar-nav nav-pills">
+				<li class="active"><a href="中国传统文化.html"><span class="iconfont">&#xe88d;</span>首页</a></li>
+				<li>
+					<a href="中国风筝.html">中国风筝</a>	
+				</li>
+				<li>
+					<a href="中国古家具.html">中国古家具</a>
+				</li>
+				<li>
+					<a href="中国剪纸.html">中国剪纸</a>
+				</li>
+				<li>
+					<a href="中国皮影.html"">中国皮影</a>
+				</li>
+				<li class="disabled"><a href="#">茶文化</a></li>
+				<li class="disabled"><a href="#">丝绸文化</a></li>
+				<li class="disabled"><a href="#">酒文化</a></li>
+			</ul>
+			<ul class="nav navbar-nav pull-right">
+				<li><a href=""><span class="iconfont">&#xe8c9;</span>登录</a></li>
+				<li><a href=""><span class="iconfont">&#xe8c8;</span>注册</a></li>
+				<li><a href=""><span class="iconfont">&#xe8ab;</span>客服</a></li>
+				<li><a href=""><span class="iconfont">&#xe646;</span>关于</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div id="banner">
+	<div class="b_left">
+		<ul>
+			<li style="z-index:1;"><img src="img/zhuye/1.jpg" alt=""><span>戏剧是由演员扮演角色在舞台上当众表演故事的一种综合艺术。</span></li>
+			<li><img src="img/zhuye/2.jpg" alt="">
+			<span>中国剪纸文化</span></li>
+			<li><img src="img/zhuye/3.jpg" alt="">
+			<span>中国剪纸文化</span></li>
+			<li><img src="img/zhuye/4.jpg" alt="">
+			<span>脸谱</span></li>
+			<li><img src="img/zhuye/5.jpg" alt="">
+			<span>美丽的黑白风景图</span></li>
+			<li><img src="img/zhuye/6.jpg" alt="">
+			<span>中华饮食文化</span></li>
+			<li><img src="img/zhuye/7.jpg" alt="">
+			<span>中国剪纸文化</span></li>
+			<li><img src="img/zhuye/8.jpg" alt="">
+			<span>中国剪纸文化</span></li>
+			<li><img src="img/zhuye/9.jpg" alt="">
+			<span>中国古家具</span></li>
+			<li><img src="img/zhuye/10.jpg" alt="">
+			<span>海南历来盛产珍珠，在陵水曾出产了中国最大的珍珠王，国际市场上南海的珍珠最为珍贵，人们常说“西珠不如东珠，东珠不如南珠</span></li>
+			<li><img src="img/zhuye/11.jpg" alt="">
+			<span>中国风景图</span></li>
+		</ul>
+
+		<div class="prev"><div class="mark_left" href=""><span class="iconfont" style="font-size: 80px">&#xe8ef;</span></div>
+		</div>
+		<div class="next"><div  class="mark_right" href=""><span class="iconfont" style="font-size: 80px">&#xe8f0;</span></div>
+		</div>
+	</div>
+	<div class="b_right">
+		<ul>
+			<li><img src="img/zhuye/1.jpg" alt=""></li>
+			<li><img src="img/zhuye/2.jpg" alt=""></li>
+			<li><img src="img/zhuye/3.jpg" alt=""></li>
+			<li><img src="img/zhuye/4.jpg" alt=""></li>
+			<li><img src="img/zhuye/5.jpg" alt=""></li>
+			<li><img src="img/zhuye/6.jpg" alt=""></li>
+			<li><img src="img/zhuye/7.jpg" alt=""></li>
+			<li><img src="img/zhuye/8.jpg" alt=""></li>
+			<li><img src="img/zhuye/9.jpg" alt=""></li>
+			<li><img src="img/zhuye/10.jpg" alt=""></li>
+			<li><img src="img/zhuye/11.jpg" alt=""></li>
+		</ul>
+	</div>
+</div>
+<img src="img/bei.jpg" alt="" style="width:100%;height:1540px;position:absolute;z-index: -1;top:685px;margin:0">
+<div id="container">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-2 col-sm-2" style="padding:0;margin:0px"><img src="img/feng.jpg" alt="" style="width:200px;height:200px;" class=img-responsive></div>
+			<div class="col-md-10 col-sm-10">
+				<h4>中国风筝</h4>
+				<p>中国风筝有悠久的历史，据说汉朝大将韩信曾利用风筝进行测量。梁武帝时曾利用风筝传信，但未成功。南北朝有人背着风筝从高处跳下而没有跌死。唐朝的张丕被围困时曾利用风筝传信求救兵，取得了成功。这些说明，中国风筝的历史至少有2000多年了。</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2 col-sm-2" style="padding:0;margin:0px"><img src="img/jiaju.jpg" alt="" style="width:200px;height:200px;" class=img-responsive></div>
+			<div class="col-md-10 col-sm-10">
+				<h4>中国古家具</h4>
+				<p>中国风筝有悠久的历史，据说汉朝大将韩信曾利用风筝进行测量。梁武帝时曾利用风筝传信，但未成功。南北朝有人背着风筝从高处跳下而没有跌死。唐朝的张丕被围困时曾利用风筝传信求救兵，取得了成功。这些说明，中国风筝的历史至少有2000多年了。</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2 col-sm-2" style="padding:0;margin:0px"><img src="img/zhuye/7.jpg" alt="" style="width:200px;height:200px;" class=img-responsive></div>
+			<div class="col-md-10 col-sm-10">
+				<h4>中国剪纸</h4>
+				<p>中国风筝有悠久的历史，据说汉朝大将韩信曾利用风筝进行测量。梁武帝时曾利用风筝传信，但未成功。南北朝有人背着风筝从高处跳下而没有跌死。唐朝的张丕被围困时曾利用风筝传信求救兵，取得了成功。这些说明，中国风筝的历史至少有2000多年了。</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2 col-sm-2" style="padding:0;margin:0px"><img src="img/piying.jpg" alt="" style="width:200px;height:200px;" class=img-responsive></div>
+			<div class="col-md-10 col-sm-10">
+				<h4>中国皮影</h4>
+				<p>中国风筝有悠久的历史，据说汉朝大将韩信曾利用风筝进行测量。梁武帝时曾利用风筝传信，但未成功。南北朝有人背着风筝从高处跳下而没有跌死。唐朝的张丕被围困时曾利用风筝传信求救兵，取得了成功。这些说明，中国风筝的历史至少有2000多年了。</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2 col-sm-2" style="padding:0;margin:0px"><img src="img/cha.jpg" alt="" style="width:200px;height:200px;" class=img-responsive></div>
+			<div class="col-md-10 col-sm-10">
+				<h4>茶文化</h4>
+				<p>中国风筝有悠久的历史，据说汉朝大将韩信曾利用风筝进行测量。梁武帝时曾利用风筝传信，但未成功。南北朝有人背着风筝从高处跳下而没有跌死。唐朝的张丕被围困时曾利用风筝传信求救兵，取得了成功。这些说明，中国风筝的历史至少有2000多年了。</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2 col-sm-2" style="padding:0;margin:0px"><img src="img/si.jpg" alt="" style="width:200px;height:200px;" class=img-responsive></div>
+			<div class="col-md-10 col-sm-10">
+				<h4>丝绸文化</h4>
+				<p>中国风筝有悠久的历史，据说汉朝大将韩信曾利用风筝进行测量。梁武帝时曾利用风筝传信，但未成功。南北朝有人背着风筝从高处跳下而没有跌死。唐朝的张丕被围困时曾利用风筝传信求救兵，取得了成功。这些说明，中国风筝的历史至少有2000多年了。</p>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-2 col-sm-2" style="padding:0;margin:0px"><img src="img/jiu.jpg" alt="" style="width:200px;height:200px;" class=img-responsive></div>
+			<div class="col-md-10 col-sm-10">
+				<h4>酒文化</h4>
+				<p>中国风筝有悠久的历史，据说汉朝大将韩信曾利用风筝进行测量。梁武帝时曾利用风筝传信，但未成功。南北朝有人背着风筝从高处跳下而没有跌死。唐朝的张丕被围困时曾利用风筝传信求救兵，取得了成功。这些说明，中国风筝的历史至少有2000多年了。</p>
+			</div>
+		</div>
+	</div>
+<div id="hider">
+	<img src="img/more.jpg" alt="">
+</div>
+<div id="fenxiao">
+	<ul style="list-style: none;margin: 0px;padding: 0px;">
+	<li style="margin: 0px;padding:0px;position: relative;width:80px;height:200px;">
+		<img src="img/bei.jpg" style="width:80px;height:200px; position:absolute;top:0px;left:0px;z-index: -1;filter: alpha(opacity:80);">
+		<p><span class="iconfont">&#xe8c9;</span>作者：</p>
+		<span>王嘉莉</span>
+		<p>学院：</p>
+		<span>XXXX</span>
+		<p>学号：</p>
+		<span>XXXXX</span>
+		<p>其他：</p>
+		<span>xxxx</span>
+	</li></ul>	
+</div>
+</div>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>中国风筝</title>
+	<link rel="stylesheet" href="css/bootstrap.min.css">
+	<link rel="stylesheet" href="http://at.alicdn.com/t/font_lnia40i6tsdobt9.css">
+</head>
+<style>
+/*top nav*/
+	#top{width:100%;height:117px;border-bottom: 2px solid black;}
+	#top img{height:137px;width:100%;position:absolute;top:-24px;}
+	#nav{min-width:1226px;width:100%;margin:0 auto;color:black;padding: 10px 0;background:#eee;height:80px;}
+	#nav .iconfont{font-size: 15px;}
+
+	#carouselcontainter{width:1000px;height:400px;margin:20px auto;border: 10px solid black;box-shadow: 20px 40px 40px black;}
+	#carouselcontainter .carousel-inner{width:980px;height:380px;}
+	#carouselcontainter .carousel-inner img{width:980px;height:380px;}
+
+	#panelContainer{width:1120px;height:350px;margin: 0 auto;padding-top: 20px;}
+	#panelContainer h4{color:#111;text-align: center;}
+	#panelContainer .panel-body{color:#444;text-indent: 4px;}
+
+	#hider{width:30px;height:70px;position:absolute;top:380px;left:0px;line-height: 30px;font-size: 20px;overflow: hidden;z-index: 2;border-radius:2px; }
+	#hider img{position: absolute;top:0px;left:0px;width:30px;height:70px;opacity: 0.8;filter: alpha(opacity:80);z-index: 1;}
+	#hider .iconfont{font-size: 20px;position: absolute;top:0px;left:0px;z-index: 3;}
+	#fenxiao{width:120px;height:30px;position:absolute;top:400px;left:-120px;overflow: hidden;z-index: -1;border-radius:2px;}
+	#fenxiao p{text-align: center;color:#111;}
+	#fenxiao span{color:#333;}
+</style>
+<script src="js/move.js"></script>
+<script>
+	window.onload=function(){
+		var oDivHider=document.getElementById('hider');
+			var oDivfx=document.getElementById('fenxiao');
+			oDivHider.onmouseover=function(){
+				startMove(oDivfx,'left',30,function(){
+					startMove(oDivfx,'height',200);
+				});
+			};
+			oDivHider.onmouseout=function(){
+				startMove(oDivfx,'height',30,function(){
+					startMove(oDivfx,'left',-120);
+				});
+			};
+	};
+</script>
+<body>
+	<div id="top"><img src="img/zhuye/top.jpg" alt=""></div>
+<div id="nav">
+	<div class="container">
+		 <div class="nav navbar">
+			<ul class="nav navbar-nav nav-pills">
+				<li><a href="中国传统文化.html"><span class="iconfont">&#xe88d;</span>首页</a></li>
+				<li class="active">
+					<a href="中国风筝.html" class="dropdown-taggle" data-toggle="dropdown">中国风筝<!-- <span class="caret"></span> --></a>	
+				</li>
+				<li>
+					<a href="中国古家具.html">中国古家具</a>
+					<!-- <ul class="dropdown-menu">
+						<li><a href="#">简介</a></li>
+						<li><a href="#">内容</a></li>
+					</ul> -->
+				</li>
+				<li>
+					<a href="中国剪纸.html">中国剪纸</a>
+					<!-- <ul class="dropdown-menu">
+						<li><a href="#">简介</a></li>
+						<li><a href="#">内容</a></li>
+					</ul> -->
+
+				</li>
+				<li>
+					<a href="中国皮影.html">中国皮影<!-- <span class="caret"></span> --></a>
+				
+				</li>
+				<li class="disabled"><a href="#">茶文化</a></li>
+				<li class="disabled"><a href="#">丝绸文化</a></li>
+				<li class="disabled"><a href="#">酒文化</a></li>
+			</ul>
+			<ul class="nav navbar-nav pull-right">
+				<li><a href=""><span class="iconfont">&#xe8c9;</span>登录</a></li>
+				<li><a href=""><span class="iconfont">&#xe8c8;</span>注册</a></li>
+				<li><a href=""><span class="iconfont">&#xe8ab;</span>客服</a></li>
+				<li><a href=""><span class="iconfont">&#xe646;</span>关于</a></li>
+			</ul>
+		</div>
+	</div>
+</div>
+
+<div id="carouselcontainter" class="carousel" data-ride="carousel" data-interval="4000">
+	<ol class="carousel-indicators">
+		<li class="active" data-target="#carouselcontainter" data-slide-to="0"></li>
+		<li data-target="#carouselcontainter" data-slide-to="1"></li>
+		<li data-target="#carouselcontainter" data-slide-to="2"></li>
+		<li data-target="#carouselcontainter" data-slide-to="3"></li>
+	</ol>
+	<div class="carousel-inner">
+		<div class="item active" >
+			<a href="#"><img src="img/f/1.jpg" alt=""></a>
+		</div>
+		<div class="item">
+			<a href="#"><img src="img/f/2.jpg" alt=""></a>
+		</div>
+		<div class="item">
+			<a href="#"><img src="img/f/3.jpg" alt=""></a>
+		</div>
+		<div class="item">
+			<a href="#"><img src="img/f/4.jpg" alt=""></a>
+		</div>
+	</div>
+</div>
+
+<div class="panel-group" id="panelContainer">
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h4 class="panel-title"><a href="#collapse1" data-toggle="collapse" data-parent="#panelContainer">简介：</a></h4>
+		</div>
+		<div class="panel-collapse in" id="collapse1">
+			<div class="panel-body">中国风筝有悠久的历史，据说汉朝大将韩信曾利用风筝进行测量。梁武帝时曾利用风筝传信，但未成功。南北朝有人背着风筝从高处跳下而没有跌死。唐朝的张丕被围困时曾利用风筝传信求救兵，取得了成功。这些说明，中国风筝的历史至少有2000多年了。</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h4 class="panel-title"><a href="#collapse2" data-toggle="collapse" data-parent="#panelContainer">潍坊风筝</a></h4>
+		</div>
+		<div class="panel-collapse" id="collapse2"><div class="panel-body">潍坊地处齐鲁之邦，古称潍县，是一文化名城，又是历史上著名的手工业之乡，这里所出产的泥塑、首饰、剌绣、杨家埠木版年画和风筝都是非常有名的，只要你到潍坊去一趟，就能感受到做为国际风筝都的称号是当之无愧的。悠久的文化历史，形成了潍坊风筝特有的地方色彩。潍坊风筝自宋代开始流行民间，明代更加普及。到清乾嘉年间盛行乡里。曾在潍县任七年县令的杨州八怪之一郑板桥，在他《怀潍县》一诗中就形象地描绘了清明时节潍坊一带放飞风筝的情景：“纸花如雪满天飞，娇女秋千打四围，飞彩罗裙风摆动，好将蝴蝶斗春归”。同时期的潍县人郭麟也曾写过此类诗句：“纸鸢儿子秋千女，乱草新米春燕多”。记述了当地人民在风和日丽、草木竞发的清明佳节，争相到白浪河两岸游春放风筝的热闹场面。潍坊风筝艺人经过几代人苦心研究探索，他们把国画、杨家埠木版年画的技巧与风筝制作工艺巧妙地结合在一起，又形成了杨家埠风筝、国画风筝和象形风筝三个分支流派。在潍坊风筝中最具代表性的风筝分别为龙头蜈蚣风筝，硬翅人物类风筝等。</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h4 class="panel-title"><a href="#collapse3" data-toggle="collapse" data-parent="#panelContainer">北京风筝</a></h4>
+		</div>
+		<div class="panel-collapse" id="collapse3"><div class="panel-body">北京风筝已有三百多年的历史记载。清明时节出游放飞风筝是北京一带的				民间习俗，《见闻杂志》说：“二三月高梁桥踏青，万柳堂明莺，弄箜篌。”清			人潘荣陛所著《帝京岁时纪胜》也把放风筝写得活灵活现：“清明扫墓，倾城男			 女，纷出四郊，提酌挈盆，轮毂相望。各携纸鸢线轴，祭扫毕，即于坟前施				放较胜”，“京师纸鸢，极尽工巧，有价值数金者。”清《帝京岁时记胜》记载			    了当时倾城男女“各携纸鸢”，清明扫墓后施放较胜的盛况。近人沈太侔
+			《春明采风			志》载：“常行沙燕，一尺以至丈二，折竹结架，作燕飞式，纸糊，绘青蓝色，			中按提线三根，大者背着风琴或太平锣鼓，以索绕●，顺风放起，昼系线条，夜			系红灯，儿童仰首追逐，以泄内之积热，盖有所取意也。三尺以上，花样各别，			哪咤、刘海、哈哈三圣、两人闹戏、蜈蚣、鲇鱼、蝴蝶、蜻蜓、三阳开泰、			七鹊登枝之类。其最奇者，雕与鹰式，一根提线翔空中，遥睹之，逼真也。”				北京风筝基本形式有硬翅、软翅、排子、长串和桶形五种。</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h4 class="panel-title"><a href="#collapse4" data-toggle="collapse" data-parent="#panelContainer">天津风筝</a></h4>
+		</div>
+		<div class="panel-collapse" id="collapse4">
+			<div class="panel-body">
+			天津风筝也是很有特色的风筝流派之一。天津风筝的制作技术，历史悠久，工艺精湛，清代的杨柳青年画《十美图放风筝》即可证实有串灯、盘鹰、唐僧取经、蝴蝶等十种风筝。对天津风筝制作技术做出重大贡献的，是已故风筝艺人魏元泰。他从事风筝制作70余年，先后研制了平拍类、圆形立体类和软翅风筝，还创造了折翅风筝，他的作品在1914年巴拿马世界博览会获得了金牌，为天津风筝赢得了荣誉。以“风筝魏”为代表的天津风筝，造型逼真，色彩典雅，做工精细。筝面大多用丝绸，轻而结实，骨架选用质地细密、节长、弹性大的毛竹，用料十分考究。天津风筝在继承传统制作技术的基础上，不断创新和发展，造型更加美观，彩绘更加精美，放飞晴空令人赏心悦目，又可放于室内以供观赏，是民间工艺的珍品。
+			</div>
+		</div>
+	</div>
+	<div class="panel panel-default">
+		<div class="panel-heading">
+		<h4 class="panel-title"><a href="#collapse5" data-toggle="collapse" data-parent="#panelContainer">四川风筝</a></h4>
+		</div>
+		<div class="panel-collapse" id="collapse5">
+			<div class="panel-body">
+			主要流传于成都、绵竹等地，半印半画，先在纸上印好人物或动物形象的墨线轮廊，糊在骨架上，再用红、黄、蓝、绿等水画粗粗刷几笔，显得潇洒流畅。风筝以大为贵。有一种“羊尾巴”风筝，形制小且无装饰，三五个串在一起，放飞时摇摇摆摆，如羊群摆尾；还有一种T形风筝，也为别处没有。成都柏树林是过去有名的风筝市。
+			</div>
+		</div>
+	</div>
+</div>
+
+<img src="img/bei.jpg" alt="" style="width:100%;height:1280px;position:absolute;z-index: -1;top:195px;margin:0;">
+
+<div id="hider">
+	<img src="img/more.jpg" alt="">
+</div>
+<div id="fenxiao">
+	<ul style="list-style: none;margin: 0px;padding: 0px;">
+	<li style="margin: 0px;padding:0px;position: relative;width:80px;height:200px;">
+		<img src="img/bei.jpg" style="width:120px;height:200px; position:absolute;top:0px;left:0px;z-index: -1;filter: alpha(opacity:80);">
+		<p><span class="iconfont">&#xe8c9;</span>作者：</p>
+		<span>王嘉莉</span>
+		<p>学院：</p>
+		<span>XXXX</span>
+		<p>学号：</p>
+		<span>XXXXX</span>
+		<p>其他：</p>
+		<span>xxxx</span>
+	</li></ul>
+</div>
+<script src="js/jquery-1.11.2.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
+</body>
+</html>
