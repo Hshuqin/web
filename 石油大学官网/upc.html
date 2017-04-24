@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>仿石油大学官网</title>
+	<style type="text/css">
+		*{margin:0;padding: 0;}/*解决浏览器不兼容问题	*/
+		ul,li{list-style:none;}
+		body{font-size: 12px;font-family: "microsoft yahei";}
+		a{text-decoration:none;}
+	</style>
+	<link rel="stylesheet" href="css/iconfont/iconfont.css">
+	<link rel="stylesheet" href="css/text.css">
+</head>
+<style>
+	/*head start*/
+	#head{width:100%;height:92px;margin-top:45px;min-width: 1200px;}
+	#head img{height:92px;float:left;margin-left: 100px;}
+	#head .h_title{width:200px;height:92px;float:right;margin-right: 200px;color:#636596;position: relative;}
+	#head .h_title .h_t_engish{display:block;margin-left: 30px;margin-top: 18px;}
+	#head .h_title .h_t_engish:hover{color:#ddd;}
+	#head .h_title .h_t_del_weixin, .h_t_del{display:block;margin-left: 30px;margin-top: 15px;float:left;}
+	#head .h_title .h_t_del:hover,.h_t_del_weixin:hover{color:#ddd;}
+	/*head end*/
+	/*nav start*/
+	#nav{width:100%;height:60px;background:#ddd;min-width: 1200px;border-top:1px solid #009cc2;border-bottom:1px solid #009cc2;position: relative;margin-top:5px;}
+	#nav .n_con{width:1200px;min-width: 1200px;height:60px;margin:0 auto;}
+	#nav .n_con img{position:absolute;top:31px;left:201px;}
+	#nav .n_con ul li{display: block;width:120px;height:30px;float:left;font-size: 14px;line-height: 30px;text-indent: 10px;}
+			/*nav hide start*/
+			#nav .n_con ul li{position: relative;}
+			#nav .n_con ul .addclass{background: blue;color:#fff;}
+			/*hider1 start*/
+			#nav .n_con ul li .hide1{width:120px;height:180px;background:blue;position:absolute;top:30px;left:0;z-index: 10;display: none;}
+			#nav .n_con ul li.li1 .hide1 ul li {color:#fff;text-indent: 10px;}
+			#nav .n_con ul li.li1 .hide1 ul li:hover{background:#254E89;}
+			/*hider1 end*/
+			/*hider2 start*/
+			#nav .n_con ul li .hide2{width:200px;height:180px;background:blue;position:absolute;top:30px;left:0;z-index: 10;display: none;}
+			#nav .n_con ul li.li2 .hide2 ul li {color:#fff;text-indent: 10px;}
+			#nav .n_con ul li.li2 .hide2 ul li:hover{background:#254E89;}
+			/*hider2 end*/
+			/*hider3 start*/
+			#nav .n_con ul li .hide3{width:120px;height:90px;background:blue;position:absolute;top:30px;left:0;z-index: 10;display: none;}
+			#nav .n_con ul li.li3 .hide3 ul li {color:#fff;text-indent: 10px;}
+			#nav .n_con ul li.li3 .hide3 ul li:hover{background:#254E89;}
+			/*hider3 end*/
+			/*hider4 start*/
+			#nav .n_con ul li .hide4{width:120px;height:120px;background:blue;position:absolute;top:30px;left:0;z-index: 10;display: none;}
+			#nav .n_con ul li.li4 .hide4 ul li {color:#fff;text-indent: 10px;}
+			#nav .n_con ul li.li4 .hide4 ul li:hover{background:#254E89;}
+			/*hider4 end*/
+			/*hider5 start*/
+			#nav .n_con ul li .hide5{width:120px;height:60px;background:blue;position:absolute;top:30px;left:0;z-index: 9;display: none;}
+			#nav .n_con ul li.li5 .hide5 ul li {color:#fff;text-indent: 10px;}
+			#nav .n_con ul li.li5 .hide5 ul li:hover{background:#254E89;}
+			/*hider5 end*/
+			/*hider6 start*/
+			#nav .n_con ul li .hide6{width:120px;height:120px;background:blue;position:absolute;top:30px;left:0;z-index: 9;display: none;}
+			#nav .n_con ul li.li6 .hide6 ul li {color:#fff;text-indent: 10px;}
+			#nav .n_con ul li.li6 .hide6 ul li:hover{background:#254E89;}
+			/*hider6 end*/
+			/*nav hide end*/
+	/*nav end*/
+	/*banner start*/
+	#banner{width:1200px;height:350px;margin:0 auto;background:gray;}
+	#banner .b_pic{width:1200px;height:350px;position: relative;}
+	#banner .b_pic ul li img{width:1200px;height:350px;}
+	#banner .b_pic ul li {display: none;position:absolute;top:0;left:0;}
+	#banner .b_btn{position:relative;}
+	#banner .b_btn div{width: 41px;height: 69px;background: red;position: absolute;top:50%;margin-top:-208px;cursor: pointer;background: url(images/banner/btn.png) no-repeat;}
+	#banner .b_btn .b_b_left{left:0px;border-radius: 0 2px 2px 0;background-position: -84px 0px;}
+	#banner .b_btn .b_b_right{right:0;border-radius: 2px 0 0 2px;background-position:-121px 0px;}
+	#banner .b_btn .b_b_left:hover{background-position: 0px 0px;}
+	#banner .b_btn .b_b_right:hover{background-position: -42px 0px;}
+	/*banner end*/
+	/*hot start*/
+	#hot{width:1200px;height:240px;margin: 0 auto;}
+	#hot .h_con{width:380px;height:210px;margin-top:20px;position:relative;float:left;margin-left:15px;}
+	#hot .h_con .h_c_title{width:380px;height:30px;line-height:30px;border-bottom: 2px solid #ddd;}
+	#hot .h_con .h_c_title:before{content: "";width:85px;height: 0px;border-bottom:2px solid blue;display: block;position:absolute;bottom:178px;left:0;}
+	#hot .h_con .h_c_title p{font-size: 16px;color:blue;float:left;}
+	#hot .h_con .h_c_title a{font-size: 12px;color:#ddd;float:right;}
+	#hot .h_con .h_c_title a:hover{color:#bbb;}
+	#hot .h_con .h_c_detail{width:380px;height:170px;margin-top: 10px;}
+	#hot .h_con .h_c_detail ul li{line-height: 20px;color:#000;}
+	#hot .h_con .h_c_detail ul li a:hover{color:#f60;}
+	#hot .h_con .h_c_detail ul li a{color:#000;}
+	/*hot end*/
+	/*detail start*/
+	#detail{width:1200px;height:55px;margin:0 auto;}
+	#detail .d_con{width:280px;height:55px;float:left;margin-right: 20px;}
+	#detail .d_con .d_c_left{width:80px;height:55px;float:left;position:relative;}
+	#detail .d_con .d_c_left p{line-height: 55px;font-size: 15px;color:blue;text-align: center;}
+	#detail .d_con .d_c_left p:before{content: "";width:0px;height:40px;border-right: 1px solid #009cc2;display: block;position:absolute;top:6px;right:0;}
+	#detail .d_con .d_c_right{width:200px;height:55px;}
+	#detail .d_con .d_c_right a p{display:block;height:25px;width:120px;color:black;line-height: 25px;text-indent: 4px;text-overflow: ellipsis;white-space: nowrap;overflow: hidden;}
+	#detail .d_con .d_c_right a p:hover{color:#f60;}
+	/*detail end*/
+	/*search start*/
+	#search {width:100%;height:40px;margin-top: 10px;border-top: 1px solid  #009cc2;border-bottom: 1px solid #009cc2;line-height: 40px;min-width: 1200px;color: #1C2566;}
+		#search p{display: block;float:left;margin-left: 190px;}
+		#search input{display:block;float:left;margin-top: 9px;}
+		#search input.s_text{width:242px;height:22px;}
+		#search input.s_button{width:37px;height:22px;margin-left:8px;
+		margin-right:8px;border: #cccccc 1px solid;color: #1C2566;cursor: pointer;}
+		#search input.s_radio{margin-top: 14px;margin-right: 4px;}
+		#search span{display: block;float:left;line-height: 40px;margin-right: 14px;}
+		#search input.s_text1{width:100px;height:22px;}
+		#search .s_box{margin-left: 50px;}
+		#search .s_secret{margin-left: 10px;}
+	/*search end*/
+	/*bottom start*/
+	#bottom{width:100%;height:170px;}
+		#bottom .b_top{width:820px;height:35px;line-height: 35px;margin:0 auto;}
+		#bottom .b_top span{color:black;display: block;float:left;}
+		#bottom .b_top a{display:block;float:left;color:#1C2566;margin: auto 4px;}
+		#bottom .b_top a:hover{color:gray;}
+		#bottom .b_middle{width:630px;height:40px;line-height: 20px;margin: 0 auto;}
+		#bottom .b_middle span a{color:#111;}
+		#bottom .b_middle span a:hover{color:#f60;}
+		#bottom .b_bottom p{display: block;height:22px;width:400px;margin:0 auto;line-height: 22px;}
+		#bottom .b_bottom p span{line-height: 22px;}
+		#bottom .b_bottom p img{width:20px;height:22px;margin:0 40px;}
+		#bottom .b_bottom p a{line-height: 22px;color:#111;}
+		#bottom .b_bottom p a:hover{color:#f60;}
+		#bottom .b_pic{width:80px;height:80px;margin:0 auto;}
+		#bottom .b_pic img{width:80px;height:80px;}
+	/*bottom end*/
+	#head .h_title .h_t_d_pic{width:154px;height:158px;position:absolute;top:70px;left:30px;background:url("images/weixin1.png");z-index: 10;display: none;}
+	
+</style>
+<body>
+    <!--top head start-->
+	<div id="head">
+		<img src="images/logo.jpg">
+		<img src="images/wei.png" alt="">
+		<div class="h_title">
+			<p class="h_t_engish">English version</p>
+			<p class ="h_t_del_weixin">官方微信</p>
+			<div class="h_t_d_pic">	
+			</div>
+			<p class ="h_t_del">官方微博</p>
+		</div>
+	</div>
+	<!--top head end-->
+	<!--nav start-->
+	<div id="nav">
+		<div class="n_con">
+			<ul>
+				<li class ="li1">
+					<p>学校概况></p>
+					<div class="hide1">
+						<ul>
+							<li>学校简介</li>
+							<li>现任领导</li>
+							<li>历任领导</li>
+							<li>石大章程</li>
+							<li>校园文化</li>
+							<li>美丽石大</li>
+						</ul>
+					</div>
+				</li>
+				<li  class="li2">
+					<p>教学院部></p>
+					<div class="hide2">
+						<ul>
+							<li>地物学院</li>
+							<li>石油工程学院</li>
+							<li>化学工程学院</li>
+							<li>极点学院</li>
+							<li>计通学院</li>
+							<li>信控学院</li>
+						</ul>
+					</div>
+				</li>
+				<li class = "li3">
+					<p>机构设置></p>
+					<div class="hide3">
+						<ul>
+							<li>党政部门</li>
+							<li>直附属单位</li>
+							<li>东营校区</li>
+						</ul>
+					</div>
+				</li>
+				<li class="li4">
+					<p>人才培养></p>
+					<div class="hide4">
+						<ul>
+							<li>本科教育</li>
+							<li>研究生教育</li>
+							<li>留学生教育</li>
+							<li>远程教育</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<p>科学研究></p>
+				</li>
+				<li>
+					<p>招生信息></p>
+				</li>
+				<li>
+					<p>人才招聘></p>
+				</li>
+				<li>
+					<p>合作交流></p>
+				</li>
+				<li>
+					<p>就业指导</p>
+				</li>
+				<li>
+					<p>学报出版></p>
+				</li>
+			</ul>
+			<img src="images/list_line.jpg" alt="">
+			<ul>
+				<li class ="li5">
+					<p>石大新闻></p>
+					<div class="hide5">
+						<ul>
+							<li>新闻网</li>
+							<li>石大校报</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<p>图书馆</p>
+				</li>
+				<li class="li6">
+					<p>办公信息></p>
+					<div class="hide6">
+						<ul>
+							<li>学校日历</li>
+							<li>学校文件</li>
+							<li>财务查询</li>
+							<li>学年校历</li>
+						</ul>
+					</div>
+				</li>
+				<li>
+					<p>数字石大></p>
+				</li>
+				<li>
+					<p>石大易班</p>
+				</li>
+				<li>
+					<p>石大校友</p>
+				</li>
+				<li>
+					<p>学生在线></p>
+				</li>
+				<li>
+					<p>信息公开</p>
+				</li>
+				<li>
+					<p>招标公告</p>
+				</li>
+				<li>
+					<p>校长信箱</p>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!--nav end-->
+	<!--banner start-->
+	<div id="banner">
+		<div class="b_pic">
+			<ul>
+				<li style="display: block;"><a href="#"><img src="images/banner/1.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/2.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/3.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/4.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/5.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/6.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/7.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/8.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/9.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/10.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/11.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/12.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/13.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/14.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/15.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/16.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/17.jpg" alt=""></a></li>
+				<li><a href="#"><img src="images/banner/18.jpg" alt=""></a></li>
+			</ul>
+		</div>
+		<div class="b_btn">
+				<div class="b_b_left"></div>
+				<div class="b_b_right"></div>
+		</div>
+	</div>
+	<!--banner end-->
+	<!--hot start-->
+	<div id="hot">
+		<div class="h_con">
+			<div class="h_c_title">
+				<p>石大要闻</p>
+				<a href="#">更多>></a>
+			</div>
+			<div class="h_c_detail">
+				<ul style="list-style-type:square">
+					<li><a href="#">3部图书入选中国高被引图书各学科TOP3名单</a></li>
+					<li><a href="#">学校发布研究生教育质量报告（2015-2016学年）</a></li>
+					<li><a href="#">石大研讨部署学生心理教育工作</a></li>
+					<li><a href="#">学校部署体育运动工作</a></li>
+					<li><a href="#">党委中心组学习贯彻两会精神和习近平总书记重要讲话精身</a></li>
+					<li><a href="#">Soft Matter以封面论文刊发我校研究生颗粒筏研究成果</a></li>
+					<li><a href="#">郝芳带队赴东营校区和石大胜华调研</a></li>
+					<li><a href="#">石大为青岛经济社会发展提供智力支持</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="h_con">
+			<div class="h_c_title">
+				<p>学术动态</p>
+				<a href="#">更多>></a>
+			</div>
+			<div class="h_c_detail">
+				<ul style="list-style-type:square">
+					<li><a href="#">【黄岛讲坛（第1期）】达尔文进化论的发展与挑战</a></li>
+					<li><a href="#">冉维谈梦想的力量</a></li>
+					<li><a href="#">【预告】你所不知道的赙仪</a></li>
+					<li><a href="#">【预告】油气多相输送商业模拟软件的最新进展</a></li>
+					<li><a href="#">党委中心组学习贯彻两会精神和习近平总书记重要讲话精身</a></li>
+					<li><a href="#">Soft Matter以封面论文刊发我校研究生颗粒筏研究成果</a></li>
+					<li><a href="#">郝芳带队赴东营校区和石大胜华调研</a></li>
+					<li><a href="#">石大为青岛经济社会发展提供智力支持</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="h_con">
+			<div class="h_c_title">
+				<p>通告公告</p>
+				<a href="#">更多>></a>
+			</div>
+			<div class="h_c_detail">
+				<ul style="list-style-type:square">
+					<li><a href="#">3部图书入选中国高被引图书各学科TOP3名单</a></li>
+					<li><a href="#">学校发布研究生教育质量报告（2015-2016学年）</a></li>
+					<li><a href="#">石大研讨部署学生心理教育工作</a></li>
+					<li><a href="#">学校部署体育运动工作</a></li>
+					<li><a href="#">党委中心组学习贯彻两会精神和习近平总书记重要讲话精身</a></li>
+					<li><a href="#">Soft Matter以封面论文刊发我校研究生颗粒筏研究成果</a></li>
+					<li><a href="#">郝芳带队赴东营校区和石大胜华调研</a></li>
+					<li><a href="#">石大为青岛经济社会发展提供智力支持</a></li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!--hot end-->
+	<!--detail start-->
+	<div id="detail">
+		<div class="d_con">
+			<div class="d_c_left">
+				<p>视频石大</p>
+			</div>
+			<div class="d_c_right">
+				<a href="#">
+					<p>2016年毕业典礼</p>
+				</a>
+				<a href="#">
+					<p>庆祝建党95周年教职工</p>
+				</a>
+			</div>
+		</div>
+		<div class="d_con">
+			<div class="d_c_left">
+				<p>特别关注</p>
+			</div>
+			<div class="d_c_right">
+				<a href="#">
+					<p>统筹推荐世界一流大学和一流学科</p>
+				</a>
+				<a href="#">
+					<p>落实《国务院关于改进加强中央财政科研项目》</p>
+				</a>
+			</div>
+		</div>
+		<div class="d_con">
+			<div class="d_c_left">
+				<p>专题推荐</p>
+			</div>
+			<div class="d_c_right">
+				<a href="#">
+					<p>“两学一做”学习教育专题网站</p>
+				</a>
+				<a href="#">
+					<p>新闻网十周年专题</p>
+				</a>
+			</div>
+		</div>
+		<div class="d_con">
+			<div class="d_c_left">
+				<p>媒体看石大</p>
+			</div>
+			<div class="d_c_right">
+				<a href="#">
+					<p>光明网:大学生关注两会</p>
+				</a>
+				<a href="#">
+					<p>中国科技网：中国石油大学科研人员发现多肽分子</p>
+				</a>
+			</div>
+		</div>
+	</div>
+	<!--detail end-->
+	<!--search start-->
+	<div id="search">
+		<p>站内搜索：</p>
+		<input class="s_text" type="text" value="请输入关键字">
+		<input class="s_button" type="button" value="搜索">
+		<input class="s_radio" type ="radio"><span>本站</span>
+		<input class="s_radio" type ="radio"><span>百度</span>
+		<p class="s_box">邮箱：</p>
+		<input class="s_text1" type="text"><span>@upc.edu.cn</span>
+		<p class="s_secret">密码：</p>
+		<input class="s_text1" type="text">
+		<input  class="s_button" type="button" value="登录">
+	</div>
+	<!--search end-->
+	<!--bottom start-->
+	<div id="bottom">
+		<div class="b_top">
+			<span>友情链接：</span>
+			<a href="#">教育部</a>
+			<a href="#">科技部</a>
+			<a href="#">中国教育新闻网</a>
+			<a href="#">中国高校报网</a>
+			<a href="#">新华网</a>
+			<a href="#">人民网</a>
+			<a href="#">光明网</a>
+			<a href="#">凤凰网</a>
+			<a href="#">中国石油</a>
+			<a href="#">中国海油</a>
+			<a href="#">中国石化</a>
+			<a href="#">中国中化</a>
+			<a href="#">更多>></a>
+		</div>
+		<div class="b_middle">
+			<span>版权所有：中国石油大学(华东)&nbsp;&nbsp; &nbsp; &nbsp;&nbsp;&nbsp; 网站维护：中国石油大学(华东)新闻网&nbsp;编辑部&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Email：<a>netnews@upc.edu.cn</a>
+			</span>
+			<span>青岛校区：青岛市黄岛区长江西路66号&nbsp;邮编：266580&nbsp;&nbsp;&nbsp;&nbsp;东营校区：山东省东营市东营区北一路739号&nbsp;邮编：257061
+			</span>
+		</div>
+		<div class="b_bottom">
+			<p>
+			<span>鲁ICP备05021531号</span>
+			<img src="images/beian.png">	
+			<a href="#">鲁公网安备 37021002000005号</a>
+			</p>
+		</div>
+		<div class="b_pic">
+			<img src="images/blue_error.png" alt="">
+		</div>
+	</div>
+	<!--bottom end-->
+	<script type="text/javascript" src="js/jquery-1.11.2.min.js"></script>
+	<script type="text/javascript">
+	    (function(){
+			var $picli = $("#banner .b_pic ul li");
+			var $btn = $("#banner .b_btn div");
+			var _index = 0;
+			var $timer = null;
+			var len = $picli.length;//13
+			var $banner = $("#banner");
+			//点击左右按钮 进行轮播
+			$btn.click(function(){
+				var index = $(this).index();
+				if(index==1){//若点击是右按钮
+					_index++;
+					if(_index > len-1){
+						_index=0;
+					}
+					$picli.eq(_index).fadeIn().siblings().fadeOut();
+					//重复代码，要优化
+				}else{
+					_index--;
+					if(_index < 0){
+						_index=len-1;
+					}
+					$picli.eq(_index).fadeIn().siblings().fadeOut();
+					//重复代码，要优化
+				}
+			});
+			function auto(){//封装
+				timer =setInterval(function(){//定时器
+					_index++;
+					if(_index > len-1){
+						_index=0;
+					}
+					$picli.eq(_index).fadeIn().siblings().fadeOut();
+						//重复代码，要优化
+				},2000)
+			}
+			auto();
+			//鼠标移入banner 停止定时，离开继续
+			$banner.hover(function(){
+				clearInterval(timer);
+			},function(){
+				auto();
+			});
+			//执行定时器
+	    })();
+	    (function(){
+	    	/*hider1 start*/
+	    	var $h_con_li1 =$("#nav .n_con ul li.li1");
+	    	var $h_hider1 = $("#nav .n_con ul li.li1 .hide1");
+	    	$h_con_li1.hover(function(){
+	    		$h_hider1.stop(true).slideDown();
+	    		$(this).addClass("addclass");
+	    	},function(){
+	    		$h_hider1.stop(true).slideUp();
+	    		$(this).removeClass("addclass");
+	    	});
+	    	/*hider1 end*/
+	    	/*hider2 start*/
+	    	var $h_con_li2 =$("#nav .n_con ul li.li2");
+	    	var $h_hider2 = $("#nav .n_con ul li.li2 .hide2");
+	    	$h_con_li2.hover(function(){
+	    		$h_hider2.stop(true).slideDown();
+	    		$(this).addClass("addclass");
+	    	},function(){
+	    		$h_hider2.stop(true).slideUp();
+	    		$(this).removeClass("addclass");
+	    	});
+	    	/*hider2 end*/
+	    	/*hider3 start*/
+	    	var $h_con_li3 =$("#nav .n_con ul li.li3");
+	    	var $h_hider3 = $("#nav .n_con ul li.li3 .hide3");
+	    	$h_con_li3.hover(function(){
+	    		$h_hider3.stop(true).slideDown();
+	    		$(this).addClass("addclass");
+	    	},function(){
+	    		$h_hider3.stop(true).slideUp();
+	    		$(this).removeClass("addclass");
+	    	});
+	    	/*hider3 end*/
+	    	/*hider4 start*/
+	    	var $h_con_li4 =$("#nav .n_con ul li.li4");
+	    	var $h_hider4 = $("#nav .n_con ul li.li4 .hide4");
+	    	$h_con_li4.hover(function(){
+	    		$h_hider4.stop(true).slideDown();
+	    		$(this).addClass("addclass");
+	    	},function(){
+	    		$h_hider4.stop(true).slideUp();
+	    		$(this).removeClass("addclass");
+	    	});
+	    	/*hider4 end*/
+	    	/*hider5 start*/
+	    	var $h_con_li5 =$("#nav .n_con ul li.li5");
+	    	var $h_hider5 = $("#nav .n_con ul li.li5 .hide5");
+	    	$h_con_li5.hover(function(){
+	    		$h_hider5.stop(true).slideDown();
+	    		$(this).addClass("addclass");
+	    	},function(){
+	    		$h_hider5.stop(true).slideUp();
+	    		$(this).removeClass("addclass");
+	    	});
+	    	/*hider5 end*/
+	    	/*hider6 start*/
+	    	var $h_con_li6 =$("#nav .n_con ul li.li6");
+	    	var $h_hider6 = $("#nav .n_con ul li.li6 .hide6");
+	    	$h_con_li6.hover(function(){
+	    		$h_hider6.stop(true).fadeIn();
+	    		$(this).addClass("addclass");
+	    	},function(){
+	    		$h_hider6.stop(true).fadeOut();
+	    		$(this).removeClass("addclass");
+	    	});
+	    	/*hider6 end*/
+	    })();
+	    (function(){
+	    	var $weixin = $("#head .h_title .h_t_del_weixin");
+	    	var $weixinhide =$("#head .h_title .h_t_d_pic");
+	    	$weixin.hover(function(){
+	    		$weixinhide.stop(true).slideDown();
+	    	},function(){
+	    		$weixinhide.stop(true).slideUp();
+	    	});
+	    })();
+	</script>
+</body>
+</html>
