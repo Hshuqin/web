@@ -1,0 +1,80 @@
+@charset "utf-8";
+/* CSS Document */
+* {
+	margin: 0px;
+	padding: 0px;
+	border: 0px;
+}
+ul,li,dl,dd,dt {
+	list-style-type: none;
+}
+body {
+	background-image: ;
+	background-repeat: repeat;
+}
+.banner_index {
+	position: relative;
+	width: 1367px;
+	height: 600px;
+	overflow: hidden;
+	margin: 0px auto;
+}
+.banner_wrap{
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	z-index: 2;
+}
+.banner_wrap li{
+	width: 1230px;
+	float: left;
+}
+.indexBanner_num{
+	width:1000px;
+	margin: 0 auto;
+	padding:10px 0;
+	text-align: center;
+} 
+.indexBanner_num a{
+	width: 8px;
+	height: 8px;
+	display: inline-block;
+	_zoom:1;
+	background-image: url(../images/bg_num.png);
+	background-repeat: no-repeat;
+	font-size: 0px;
+	line-height: 0px;
+	margin:0 1px;
+}
+.indexBanner_num a.on,.indexBanner_num a:hover{
+	background-image: url(../images/bg_num_on.png);
+	background-repeat: no-repeat;
+}
+
+.banner_index .btn,.banner_pro .bBtn{
+	position: absolute;
+	top:235px;
+	width: 56px;
+	height: 78px;
+	display: block;
+	z-index: 3;
+}
+.banner_index .btnPre,.banner_pro .bPre{
+	background-image: url(../images/bg_btnPre_index.png);
+	background-repeat: no-repeat;
+	left:20px;
+}
+.banner_index .btnPre:hover,.banner_pro .bPre:hover{
+	background-image: url(../images/bg_btnPre_index_hover.png);
+	background-repeat: no-repeat;
+}
+.banner_index .btnNext,.banner_pro .bNext{
+	background-image: url(../images/bg_btnNext_index.png);
+	background-repeat: no-repeat;
+	right: 20px;
+}
+.banner_index .btnNext:hover,.banner_pro .bNext:hover{
+	background-image: url(../images/bg_btnNext_index_hover.png);
+	background-repeat: no-repeat;
+}
+
